@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nebula Shop</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background-color: #f3f3f3;
+      overflow-x: hidden;
+      animation: fadeIn 1.2s ease-in-out;
+    }
+
+    /* Animasi global saat halaman dimuat */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(15px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    header {
+      background-image: url("logo.jpg");
+      background-size: cover;
+      background-position: center;
+      height: 180px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+      position: relative;
+      animation: slideDown 1.2s ease;
+    }
+
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.3);
+      z-index: 1;
+    }
+
+    header h1, header p {
+      position: relative;
+      z-index: 2;
+      text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+      margin: 0;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      background: #222;
+      padding: 12px 0;
+      animation: fadeIn 1.5s ease;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .about {
+      text-align: center;
+      margin: 40px auto;
+      max-width: 700px;
+      line-height: 1.6;
+      opacity: 0;
+      animation: fadeInUp 1.2s ease forwards;
+      animation-delay: 0.8s;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .about h2 {
+      color: #222;
+      margin-bottom: 16px;
+    }
+
+    .about p {
+      color: #444;
+      font-size: 1rem;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      margin-bottom: 40px;
+      opacity: 0;
+      animation: fadeInUp 1.5s ease forwards;
+      animation-delay: 1.3s;
+    }
+
+    .card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 20px;
+      text-align: center;
+      width: 240px;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    /* gambar produk jadi bulat */
+    .card img {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+
+    .card h3 {
+      margin-top: 10px;
+      color: #222;
+    }
+
+    .card p {
+      color: purple;
+      font-weight: bold;
+      margin: 5px 0 10px 0;
+    }
+
+    .btn-beli {
+      display: inline-block;
+      background-color: #6a0dad;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+    }
+
+    .btn-beli:hover {
+      background-color: #8a2be2;
+      transform: scale(1.05);
+      box-shadow: 0 5px 12px rgba(0,0,0,0.25);
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px 0;
+      background: #222;
+      color: white;
+      font-size: 0.9rem;
+      animation: fadeIn 1.8s ease;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🛍️ NEBULA SHOP 🛍️</h1>
+    <p>Marketplace Produk Lokal & Digital</p>
+  </header>
+
+  <nav>
+    <a href="home.html">BERANDA</a>
+    <a href="produk.html">PRODUK</a>
+  </nav>
+
+  <div class="about">
+    <h2>𝐓𝐄𝐍𝐓𝐀𝐍𝐆 𝐍𝐄𝐁𝐔𝐋𝐀 𝐒𝐇𝐎𝐏</h2>
+    <p>
+      Nebula Shop adalah marketplace modern yang menghadirkan produk lokal dan digital terbaik untuk Anda. 
+      Kami berkomitmen memberikan pengalaman belanja yang mudah, aman, dan terpercaya. 
+      Dukung produk kreatif Indonesia bersama kami.
+    </p>
+  </div>
+
+  <div class="container">
+    <div class="card">
+      <img src="a.png" alt="Produk 1">
+      <h3>TESTIMONY NEBULA SHOP</h3>
+      <p>
+        <a href="https://wa.me/6281234567890" class="btn-beli">Cek Sekarang</a>
+      </p>
+    </div>
+  </div>
+
+  <footer>
+    Website ini di buat oleh @Nebula Studio.
+  </footer>
+</body>
+</html>
