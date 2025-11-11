@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Produk — Nebula Studio</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #0b1220;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      background-color: #0b1220;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid #1e293b;
+    }
+
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-area img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .logo-text h1 {
+      font-size: 1.2rem;
+      margin: 0;
+    }
+
+    .logo-text p {
+      margin: 0;
+      font-size: 0.8rem;
+      color: #aaa;
+    }
+
+    .menu-area {
+      position: relative;
+    }
+
+    .menu-btn {
+      background: transparent;
+      border: 1px solid #2b2f3b;
+      border-radius: 10px;
+      color: #fff;
+      padding: 8px 15px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    .menu-content {
+      display: none;
+      position: absolute;
+      right: 0;
+      top: 45px;
+      background: #111827;
+      border-radius: 10px;
+      width: 150px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .menu-content a {
+      display: block;
+      color: #fff;
+      padding: 10px;
+      text-decoration: none;
+    }
+
+    .menu-content a:hover {
+      background: #1e293b;
+    }
+
+    .show {
+      display: block;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 80px 20px;
+      background: linear-gradient(180deg, #0b1220 0%, #111827 100%);
+      animation: fadeIn 1s ease-out;
+    }
+
+    .hero h2 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      color: #aaa;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .produk-section {
+      padding: 50px 20px;
+    }
+
+    .produk-section h3 {
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+      text-align: left;
+      max-width: 1000px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .produk-section p {
+      color: #aaa;
+      text-align: left;
+      max-width: 1000px;
+      margin: 0 auto 15px;
+    }
+
+    .produk-scroll {
+      display: flex;
+      overflow-x: auto;
+      gap: 20px;
+      padding: 20px 10px;
+      scroll-behavior: smooth;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .produk-item {
+      flex: 0 0 auto;
+      width: 130px;
+      text-align: center;
+      background: #111827;
+      border-radius: 15px;
+      padding: 15px 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+      transition: transform 0.3s;
+    }
+
+    .produk-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 15px rgba(99,102,241,0.4);
+    }
+
+    .produk-item img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 10px;
+    }
+
+    .produk-item h4 {
+      font-size: 0.9rem;
+      margin: 5px 0;
+    }
+
+    .btn-beli {
+      display: inline-block;
+      background: linear-gradient(90deg, #25D366, #128C7E);
+      color: white;
+      padding: 6px 12px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: bold;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn-beli:hover {
+      transform: scale(1.08);
+      box-shadow: 0 4px 10px rgba(37, 211, 102, 0.4);
+    }
+
+    footer {
+      padding: 20px;
+      border-top: 1px solid #1e293b;
+      color: #aaa;
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    ::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #6366f1;
+      border-radius: 10px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo-area">
+      <img src="logo.png" alt="Logo Nebula Studio">
+      <div class="logo-text">
+        <h1>Nebula Studio</h1>
+        <p>Toko Online</p>
+      </div>
+    </div>
+
+    <div class="menu-area">
+      <button class="menu-btn" onclick="toggleMenu()">☰ Menu</button>
+      <div id="menuContent" class="menu-content">
+        <a href="index.html">Beranda</a>
+        <a href="produk.html">Produk</a>
+        <a href="tentang.html">Tentang</a>
+        <a href="kontak.html">Kontak</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <h2>Selamat Datang di Halaman Produk</h2>
+    <p>Temukan berbagai kategori produk digital unggulan dari Nebula Studio — mulai dari kebutuhan sosial media, promosi bisnis, hingga layanan kreatif lainnya!</p>
+  </section>
+
+  <section class="produk-section">
+    <h3>Produk Facebook</h3>
+    <p>Berbagai layanan dan kebutuhan sosial media Facebook.</p>
+    <div class="produk-scroll">
+      <div class="produk-item">
+        <img src="logofb.png" alt="FB Likes">
+        <h4>𝙰𝙺𝚄𝙽 𝙵𝙱 𝙵𝚁𝙴𝚂𝙷</h4>
+        <a href="https://wa.me/p/24677265025306673/6287874822789" target="_blank" class="btn-beli">🛒 ʙᴇʟɪ ꜱᴇᴋᴀʀᴀɴɢ</a>
+      </div>
+      <div class="produk-item">
+        <img src="logofb.png" alt="FB Followers">
+        <h4>𝙰𝙺𝚄𝙽 𝙵𝙱 𝙵𝚁𝙴𝚂𝙷 𝙰𝟸𝙵</h4>
+        <a href="https://wa.me/c/6281234567890" target="_blank" class="btn-beli">🛒 ʙᴇʟɪ ꜱᴇᴋᴀʀᴀɴɢ</a>
+      </div>
+      <div class="produk-item">
+        <img src="logofb.png" alt="FB Views">
+        <h4>𝙰𝙺𝚄𝙽 𝙵𝙱 𝙵𝚁𝙴𝚂𝙷 𝙲𝙾𝙾𝙺𝙸𝙴𝚂</h4>
+        <a href="https://wa.me/c/6281234567890" target="_blank" class="btn-beli">🛒 ʙᴇʟɪ ꜱᴇᴋᴀʀᴀɴɢ</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="produk-section">
+    <h3>Produk Instagram</h3>
+    <p>Layanan untuk meningkatkan engagement dan popularitas akun Instagram kamu.</p>
+    <div class="produk-scroll">
+      <div class="produk-item">
+        <img src="logoig.png" alt="IG Followers">
+        <h4>IG Followers</h4>
+        <a href="https://wa.me/c/6281234567890" target="_blank" class="btn-beli">Beli Sekarang</a>
+      </div>
+      <div class="produk-item">
+        <img src="logoig.png" alt="IG Likes">
+        <h4>IG Likes</h4>
+        <a href="https://wa.me/c/6281234567890" target="_blank" class="btn-beli">Beli Sekarang</a>
+      </div>
+      <div class="produk-item">
+        <img src="logoig.png" alt="IG Views">
+        <h4>IG Views</h4>
+        <a href="https://wa.me/c/6281234567890" target="_blank" class="btn-beli">Beli Sekarang</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="produk-section">
+    <h3>Produk TikTok</h3>
+    <p>Layanan promosi dan peningkatan performa akun TikTok kamu.</p>
+    <div class="produk-scroll">
+      <div class="produk-item">
+        <img src="logotiktok.png" alt="TT Views">
+        <h4>TT Views</h4>
+        <a href="https://wa.me/c/6281234567890" target="_blank" class="btn-beli">Beli Sekarang</a>
+      </div>
+      <div class="produk-item">
+        <img src="logotiktok.png" alt="TT Likes">
+        <h4>TT Likes</h4>
+        <a href="https://wa.me/c/6281234567890" target="_blank" class="btn-beli">Beli Sekarang</a>
+      </div>
+      <div class="produk-item">
+        <img src="logotiktok.png" alt="TT Followers">
+        <h4>TT Followers</h4>
+        <a href="https://wa.me/c/6281234567890" target="_blank" class="btn-beli">Beli Sekarang</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    Creator Website © Nebula Studio
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("menuContent").classList.toggle("show");
+    }
+  </script>
+</body>
+</html>
